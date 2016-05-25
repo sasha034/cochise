@@ -1,0 +1,264 @@
+/* Eléments principaux de la page */
+
+body
+{
+    background: url('../images/fond-site.jpg');
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #FFF;
+}
+
+#block-page
+{
+    width: 900px;
+    margin: auto;
+    
+}
+
+table
+{
+    color: #444;
+}
+a
+{
+    color: #FF009E;
+}
+
+a:hover
+{
+    color: #FF009E;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
+.header
+{
+    text-align: center;
+    
+}
+
+fieldset
+{
+    border-radius: 25px;
+    border: solid #FF009E 4px;
+}
+
+strong.log
+{
+    color: #FF009E;
+}
+
+/*----------------------------------------------HEADER-------------------------------------------------------------*/
+
+
+#banniere
+{
+    text-align: center;
+   
+}
+
+
+/*-------------------------------------------PAGE FORM_LOGIN--------------------------------------------------------*/
+
+
+#form_login
+{
+    text-align: center;
+    width: 402px;   
+    margin: auto;
+    
+}
+
+/*--------------------------------------------PAGE ERROR--------------------------------------------------------------*/
+#block-error
+{
+     text-align: center;
+    width: 402px;   
+    margin: auto;
+    border-radius: 25px;
+    border: solid #FF009E 4px;
+    
+}  
+
+/*--------------------------------------------PAGE AJOUTER UN USER----------------------------------------------------*/
+
+#block-ajouter-user
+{
+    text-align: center;
+    width: 402px;   
+    margin: auto;
+}
+
+
+/*--------------------------------------------------PAGE MENU---------------------------------------------------------*/
+
+
+.menu_icone
+{    
+    display: inline-block;
+    text-align: center;
+}
+
+#gestion
+{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#body_menu
+{
+    width: 900px;
+    margin: auto;
+    text-align: center;
+    border: solid #FF009E 4px;
+    border-radius: 25px;
+    padding-bottom: 50px;    
+}
+
+#deconnexion
+{
+    margin-top: 20px;
+}
+/*--------------------------------------------------PAGE NEWSLETTER------------------------------------------------------*/
+
+#block-newsletter
+{
+    width: 900px;
+    margin: auto;
+    border: #FF009E solid 4px;
+    width: 460px;
+    border-radius: 25px;
+    padding-left: 50px;
+    
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: grey; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #FF009E; }
+.autocomplete-suggestions strong { font-weight: normal; color: green; }
+
+/*--------------------------------------------------PAGE GESTION GROUPE--------------------------------------------------*/ 
+
+#block-page-gestion-groupe
+{
+    width: 900px;
+    margin: auto;
+     
+}
+
+table
+{
+  font-size: 0.9em;
+  text-align: center;
+  border-collapse: collapse;
+  
+  margin: auto;
+}
+
+tr
+{
+   padding-top: 2px; 
+}
+
+tr:nth-child(even)
+{
+    background: #FFF;
+}
+
+tr:nth-child(odd) 
+{
+    background: #ACE6F2;
+}
+
+th
+{
+    background: #ff99ff;
+}
+
+#block_csv
+{
+    border: #FF009E solid 4px;
+    width: 373px;
+    border-radius: 25px;
+    padding-left: 10px; 
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#back
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 150px;
+}
+
+#block_membre
+{
+   display: inline-block; 
+   vertical-align: top;
+   
+}
+
+#block_groupe
+{
+    display: inline-block; 
+    vertical-align: top;
+    margin-left: 150px;
+    
+}
+
+.blockLienAdd
+{
+   margin-bottom: 10px; 
+}
+
+.lienAdd
+{
+    position: relative;
+    top : 5px;
+}
+
+/*--------------------------------------------------PAGE AJOUTER UN MEMBRE-----------------------------------------------*/
+
+#block-page-ajouter-membre
+{
+    text-align: center;
+    margin: auto;
+    width: 402px;
+}
+
+/*--------------------------------------------------PAGE LISTER UN GROUPE------------------------------------------------*/
+
+#lightbox1
+{
+    
+    text-align: center;
+    background: url('../images/fond-site.jpg');
+    width: 450px;
+    
+    
+}
+
+/*--------------------------------------------------PAGE FORM AJOUTER GROUPE----------------------------------------------*/
+
+#block-page-form-ajouter-groupe
+{
+    text-align: center;
+    width: 402px;
+    margin: auto;
+}
+
+/*--------------------------------------------------PAGE FORM MODIFIER UN GROUPE-------------------------------------------*/
+
+#lightbox2
+{
+    background: url('../images/fond-site.jpg');
+    text-align: center;
+    max-width: 600px;
+    
+}
