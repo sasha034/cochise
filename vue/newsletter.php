@@ -8,23 +8,15 @@ session_start();
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Cochise Soft</title>
         <link rel="stylesheet" href="../ressources/css/style.css" />       
-<!--        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        
-        <script type="text/javascript" src="../js/jquery/jquery-1.4.3.min.js"></script>
-        <script type="text/javascript" src="../js/jquery/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-        <script type="text/javascript" src="../js/jquery/fancybox/jquery.easing-1.3.4.pack.js"></script>
-        <script type="text/javascript" src="../js/jquery/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-        <link rel="stylesheet" href="../js/jquery/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-        
-        <script type="text/javascript" src="../js/jquery/jquery.autocomplete.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/jquery/jquery.autocomplete.min.js"></script>      
     </head>
     <body>
         <div class="header"><img src="../ressources/images/banniere1.png" alt="bannière cochise"/></div>
         <div id="block-newsletter">
             <p>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong></p>
             <h2>Envoyez votre Newsletter</h2>
-            <!--<script src="../js/emailEmpty.js"></script>-->
+            
             
             <form method="POST" action="../controller/newsletter_traitement.php" name="formulaire_Newsletter" onsubmit=" return emailEmpty();">
                 <p>

@@ -1,6 +1,6 @@
 function validateConnexion(){
     if(document.formulaireConnexion.pseudo.value === ''){
-        window.alert("Veuillez entrer un identifiant");
+        window.alert("Veuillez entrer un login");
         return false;
     }
     if(document.formulaireConnexion.password.value === ''){

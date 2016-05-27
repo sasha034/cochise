@@ -22,7 +22,7 @@
 <p><a href="../vue/newsletter.php">Retournez au formulaire</a></p>
                 <?php
             }
-       // }
+       
 $destinataire = filter_input(INPUT_POST, 'email');
 $objet = filter_input(INPUT_POST, 'objet');
 $pj = filter_input(INPUT_POST, 'pj');

@@ -2,14 +2,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <script type="text/javascript" src="../../js/validateConnexion.js"></script> 
-        <link rel="stylesheet" href="../../ressources/css/style.css" />
         <title>Authentification</title>
+        <script src="js/validateConnexion.js" /></script>
     </head>
     <body>
         <div id="form_login"> 
             
-            <script src="js/validateConnexion.js" /></script>
+            
             <form id="formulaireConnexion" name="formulaireConnexion" action="vue/menu.php" method="POST" onsubmit=" return validateConnexion();">
             <div id="intro"><p>Veuillez vous identifier pour accéder à l'application Cochise Soft</p></div>
             <fieldset class="authen">
