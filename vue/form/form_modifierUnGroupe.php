@@ -11,7 +11,7 @@
             <h2>Ajoutez des membres dans un groupe</h2>
             <div>
                 <form id="ajoutMembreGroupe" name="ajoutMembreGroupe" action="../controller/groupe.action.modifier.php" method="POST">
-                    <div id="intro1"><p>Sélectionnez les membres que vous souhaitez ajouter à votre groupe</p></div>
+                    <div id="intro1"><p>Sï¿½lectionnez les membres que vous souhaitez ajouter ï¿½ votre groupe</p></div>
                     <h3>Voici votre liste de membres: </h3>
                     <!-- tableau lister Membre -->
                     <input type="hidden" name="idGroupeSelected" value="<?php echo filter_input(INPUT_GET, "idGroupe"); ?>" />
@@ -19,7 +19,7 @@
                         <tr><th>SELECTIONNEZ</th><th>IDMEMBRE</th><th>EMAIL</th><th>NOM</th><th>PRENOM</th></tr>
                         <?php
                         $idG = filter_input(INPUT_GET, "idGroupe");
-                        $reponse = $bdd->query("SELECT m.IDMEMBRE, m.EMAIL, m.NOM, m.PRENOM FROM membre m WHERE m.IDMEMBRE NOT IN( SELECT me.IDMEMBRE FROM appartenir a, groupe g, membre me WHERE me.IDMEMBRE = a.IDMEMBRE AND g.IDGROUPE = a.IDGROUPE AND a.IDGROUPE = $idG)");
+                        $reponse = $bdd->query("SELECT m.IDMEMBRE, m.EMAIL, m.NOM, m.PRENOM FROM MEMBRE m WHERE m.IDMEMBRE NOT IN( SELECT me.IDMEMBRE FROM APPARTENIR a, GROUPE g, MEMBRE me WHERE me.IDMEMBRE = a.IDMEMBRE AND g.IDGROUPE = a.IDGROUPE AND a.IDGROUPE = $idG)");
                         while ($donneesMembres = $reponse->fetch()) {
                             ?>
                             <tr>

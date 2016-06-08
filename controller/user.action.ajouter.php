@@ -13,7 +13,7 @@ $_POST['email'] = htmlspecialchars($_POST['email_user']); // On rend inoffensive
 
 if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", filter_input(INPUT_POST, 'email_user'))) {
     
-    $req = $bdd->prepare('INSERT INTO user(EMAIL, NOM, LOGIN, PASSWORD) VALUES(:EMAIL, :NOM, :LOGIN, :PASSWORD )');
+    $req = $bdd->prepare('INSERT INTO `USER`(EMAIL, NOM, LOGIN, PASSWORD) VALUES(:EMAIL, :NOM, :LOGIN, :PASSWORD )');
     $req->execute(array(
         'NOM' => $nom_user,
         'EMAIL' => $email_user,
@@ -31,8 +31,8 @@ if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", filter_input(INPU
                             </head>
                             <body>
                                 <div>
-                                    <p>Félicitations  <strong><?php echo $login ?></strong> ! Votre profil a bien été enregistré !</p>
-                                    <p>Vous pouvez désormais vous connecter avec votre login et le mot de passe que vous venez d\'enregistrer.</p>
+                                    <p>Fï¿½licitations  <strong><?php echo $login ?></strong> ! Votre profil a bien ï¿½tï¿½ enregistrï¿½ !</p>
+                                    <p>Vous pouvez dï¿½sormais vous connecter avec votre login et le mot de passe que vous venez d\'enregistrer.</p>
                                     <a href="../index.php">Authentifiez-vous ici!</a>
 
                                 </div>
@@ -55,7 +55,7 @@ if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", filter_input(INPU
                             </head>
                             <body>
                                 <div>
-                                <p>Impossible de créer votre compte, l\'adresse email est invalide.</p>
+                                <p>Impossible de crï¿½er votre compte, l\'adresse email est invalide.</p>
                                 <p><a href="../vue/form/form_ajouterUnUser.php">Retournez au formulaire</a></p>
                                 </div>
                             </body>

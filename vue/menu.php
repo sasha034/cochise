@@ -6,7 +6,7 @@ $_SESSION['login'] = filter_input(INPUT_POST, 'pseudo');
 $_SESSION['pseudo'] = filter_input(INPUT_POST, 'pseudo');
 
 $pseudo = htmlspecialchars(filter_input(INPUT_POST, 'pseudo'));
-$mdpTemp = $bdd->query('SELECT PASSWORD FROM user WHERE LOGIN = "' . $pseudo . '"');
+$mdpTemp = $bdd->query('SELECT PASSWORD FROM `USER` WHERE LOGIN = "' . $pseudo . '"');
 $mdpBase = $mdpTemp->fetch();
 $mdp = md5(htmlspecialchars(filter_input(INPUT_POST, 'password')));
 
@@ -21,7 +21,7 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
         </head>
         <body>
             <div class="header">
-                <img src="../ressources/images/banniere.png" alt="bannière du site" />
+                <img src="../ressources/images/banniere.png" alt="banniï¿½re du site" />
             </div>
             <div id="body_menu">                
                 <p>Bienvenue <strong class="log"><?php 
@@ -51,7 +51,7 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
                                      }else{
                                          echo filter_input(INPUT_GET,'login');
                                      }?>"><img src="../ressources/images/histo1.jpg" /></a><h3>HISTORIQUE</h3></div>                
-                <div id="deconnexion"><a href="../index.php">Déconnexion</a></div>
+                <div id="deconnexion"><a href="../index.php">Dï¿½connexion</a></div>
             </div>
         </body>
     </html>

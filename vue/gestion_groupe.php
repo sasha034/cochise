@@ -17,7 +17,7 @@ include_once '../modele/connexionBdd.php';
     </head>
     <body>
         <div class="header">
-            <img src="../ressources/images/banniere.png" alt="bannière du site" />
+            <img src="../ressources/images/banniere.png" alt="banniÃ¨re du site" />
         </div> 
         <div id="block-page-gestion-groupe">
             <div>
@@ -32,7 +32,7 @@ include_once '../modele/connexionBdd.php';
                     <input type="submit" value="Envoyer" name="submit" /> <input type="reset" name="reset" value="Effacer" />
                 </form>
             </div>    
-            <div id="back"><a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
+            <div id="back"><a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour Ã  la page d'accueil</a></div>
             <div></div>
             <div id="block_membre">
                 <h3>Voici votre liste de membres: </h3>

@@ -5,7 +5,7 @@ $reponse = $bdd->query('SELECT G.NOMGROUPE FROM GROUPE G WHERE G.IDGROUPE = ' . 
 $data = $reponse->fetch();
 $data1 = $data[0];
 
-$reponse1 = $bdd->query('SELECT DISTINCT g.NOMGROUPE FROM groupe g, appartenir a WHERE a.IDGROUPE = g.IDGROUPE AND a.IDGROUPE = ' . $idG);
+$reponse1 = $bdd->query('SELECT DISTINCT g.NOMGROUPE FROM GROUPE g, APPARTENIR a WHERE a.IDGROUPE = g.IDGROUPE AND a.IDGROUPE = ' . $idG);
 $donneesGroupes = $reponse1->fetch();
 ?>
 <!DOCTYPE html>

@@ -1,30 +1,31 @@
 <?php
 
 if (isset($_GET['query'])) {
-    // Mot tapé par l'utilisateur
+    // Mot tapï¿½ par l'utilisateur
     $q = htmlentities($_GET['query']);
-    
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=cochise;charset=utf8', 'root', '');
-        
-    } catch (Exception $e) {
-        exit('Impossible de se connecter à la base de données.');
-    }
-    //cho 'babaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar';
 
-    // Requête SQL
+    include('../modele/connexionBdd.php');
+    
+//    try {
+//        $bdd = new PDO('mysql:host=localhost;dbname=cochise;charset=utf8', 'root', '');
+//
+//    } catch (Exception $e) {
+//        exit('Impossible de se connecter ï¿½ la base de donnï¿½es.');
+//    }
+
+    // Requï¿½te SQL
     $requete = "SELECT EMAIL FROM membre";
 
-    // Exécution de la requête SQL
+    // Exï¿½cution de la requï¿½te SQL
     $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
 
-    // On parcourt les résultats de la requête SQL
+    // On parcourt les rï¿½sultats de la requï¿½te SQL
     while ($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
-        // On ajoute les données dans un tableau
+        // On ajoute les donnï¿½es dans un tableau
         $suggestions['suggestions'][] = $donnees['EMAIL'];
     }
 
-    // On renvoie le données au format JSON pour le plugin
+    // On renvoie le donnï¿½es au format JSON pour le plugin
     echo json_encode($suggestions);
 }
 

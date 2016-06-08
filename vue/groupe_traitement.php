@@ -1,26 +1,26 @@
 <?php
 
 include_once '../modele/connexionBdd.php';
-//page qui gère l'extraction des données du fichier CSV envoyé par l'user, et les tranfert en base.
-$html = '<div><p>Votre fichier CSV a bien été envoyé.</p></div>';
+//page qui gï¿½re l'extraction des donnï¿½es du fichier CSV envoyï¿½ par l'user, et les tranfert en base.
+$html = '<div><p>Votre fichier CSV a bien ï¿½tï¿½ envoyï¿½.</p></div>';
 
 //upload du fichier CSV
 $nomFichierCsv = $_FILES['csv']['name'];
 if (isset($_FILES['csv']) AND $_FILES['csv']['error'] == 0) {
     // Testons si le fichier n'est pas trop gros
     if ($_FILES['csv']['size'] <= 1000000) {
-        // Testons si l'extension est autorisée
+        // Testons si l'extension est autorisï¿½e
         $infosfichier = pathinfo($_FILES['csv']['name']);
         $extension_upload = $infosfichier['extension'];
         $extensions_autorisees = array('csv');
         if (in_array($extension_upload, $extensions_autorisees)) {
-            // On peut valider le fichier et le stocker définitivement
+            // On peut valider le fichier et le stocker dï¿½finitivement
             move_uploaded_file($_FILES['csv']['tmp_name'], '../uploads/' . $nomFichierCsv);
             echo $html;
         }
     }
 }
-//Extraction des données du CSV uploadé vers la base de données
+//Extraction des donnï¿½es du CSV uploadï¿½ vers la base de donnï¿½es
 if (($handle = fopen("../uploads/" . $nomFichierCsv, "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);
@@ -28,7 +28,7 @@ if (($handle = fopen("../uploads/" . $nomFichierCsv, "r")) !== FALSE) {
         for ($i = 0; $i < $num; $i++) {
             $tabBrut = explode(";", $data[$i]);
             //echo $tabBrut[$i].$tabBrut[$i+1]. $tabBrut[$i+2].  "</br>";
-            $req = $bdd->prepare('INSERT INTO membre(EMAIL, NOM, PRENOM) VALUES(:EMAIL, :NOM, :PRENOM)');
+            $req = $bdd->prepare('INSERT INTO MEMBRE(EMAIL, NOM, PRENOM) VALUES(:EMAIL, :NOM, :PRENOM)');
             $req->execute(array(
                 'EMAIL' => $tabBrut[$i],
                 'NOM' => $tabBrut[$i+1],                

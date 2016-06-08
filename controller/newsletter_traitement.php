@@ -1,27 +1,35 @@
 <?php
-        //Vérification par regex de l'email destinataire et gestion de la faille XSS
-        //if (isset(filter_input(INPUT_POST, 'email'))) {
-            $_POST['email'] = htmlspecialchars($_POST['email']); // On rend inoffensives les balises HTML que le visiteur a pu rentrer
-            
-            if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", filter_input(INPUT_POST, 'email'))) {
-                
-                
-                echo '<p>Votre message a bien été envoyé</p>';
-                try {
+//VÃ©rification par regex de l'email destinataire et gestion de la faille XSS
+//if (isset(filter_input(INPUT_POST, 'email'))) {
 
-                    $bdd = new PDO('mysql:host=localhost;dbname=cochise;charset=utf8', 'root', '');
-                    
-                } catch (Exception $e) {
+//$_POST['email'] = htmlspecialchars($_POST['email']); // On rend inoffensives les balises HTML que le visiteur a pu rentrer
 
-                    die('Erreur : ' . $e->getMessage());
-                }
-            } else {
-                echo 'Votre email destinataire est invalide';
-                
-                ?>
-<p><a href="../vue/newsletter.php">Retournez au formulaire</a></p>
-                <?php
-            }
+include('../modele/connexionBdd.php');
+
+
+$targets = explode(',',$_POST["targets"]);
+$mails = [];
+
+
+foreach($targets as $target){
+    if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $target)){
+        $mails[] = $target;
+    } elseif(preg_match("#([0-9]*)#", $target)) {
+        $requete = "SELECT m.EMAIL as EMAIL FROM MEMBRE m
+                    INNER JOIN APPARTENIR a ON a.IDMEMBRE = m.IDMEMBRE
+                    WHERE a.IDGROUPE = ".$target;
+
+        $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
+
+        while ($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
+            $mails[] = $donnees['EMAIL'];
+        }
+    }
+}
+
+echo "Salut sava ? Moi sava et toi ? mdr xP";
+
+
        
 $destinataire = filter_input(INPUT_POST, 'email');
 $objet = filter_input(INPUT_POST, 'objet');
@@ -43,6 +51,8 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('anthony.ezar@yahoo.fr', 'Client');
+
+// Ajouter un foreach mails -> addAddress
 $mail->addAddress('sasha034@hotmail.fr', 'Antho034');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 $mail->addReplyTo('anthony.ezar@yahoo.fr', 'Information');
@@ -62,4 +72,4 @@ if(!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
-}       
+}

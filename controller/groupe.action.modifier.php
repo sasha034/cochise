@@ -6,7 +6,7 @@ $idGroupeSelected = filter_input(INPUT_POST, "idGroupeSelected");
 
 
 for ($i = 0; $i < sizeof($idMembresChecked); $i++) {
-    $req2 = $bdd->prepare('INSERT INTO appartenir(IDMEMBRE, IDGROUPE) VALUES(:IDMEMBRE, :IDGROUPE)');
+    $req2 = $bdd->prepare('INSERT INTO APPARTENIR(IDMEMBRE, IDGROUPE) VALUES(:IDMEMBRE, :IDGROUPE)');
     $req2->execute(array(
         'IDMEMBRE' => $idMembresChecked[$i],
         'IDGROUPE' => $idGroupeSelected

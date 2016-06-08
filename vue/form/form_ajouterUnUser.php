@@ -5,11 +5,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
         <title>Incription</title>
         <link rel="stylesheet" href="../../ressources/css/style.css" />
-        <script src="js/checkRegex.js" /></script>
     </head>
     <body>
         <div id="block-ajouter-user">
-            <img class="header" src="../../ressources/images/banniere1.png" alt="bannière du site" />
+            <img class="header" src="../../ressources/images/banniere1.png" alt="banniï¿½re du site" />
             <form id="form_ajouterUnUser" name="form_ajouterUnUser" action="../../controller/user.action.ajouter.php" method="POST" onsubmit=" return checkRegex();">
                 <div id="intro"><p>Bienvenue sur votre formulaire d'inscription</p></div>
                 <fieldset>
