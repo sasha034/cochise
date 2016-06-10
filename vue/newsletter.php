@@ -22,7 +22,7 @@ session_start();
     </head>
     <body>
         <div class="header"><img src="../ressources/images/banniere1.png" alt="bannière cochise"/></div>
-        <div id="block-newsletter">
+        <div id="block-newsletter" class="trebuchet">
             <p>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong></p>
             <h2>Envoyez votre Newsletter</h2>
             
@@ -43,11 +43,11 @@ session_start();
                     <label for="message">Message: </label><br />  
                     <textarea name="message" rows="10" id="message" cols="48"> </textarea>
                 </p>
-                <div>
-                    <input type="submit" value="Envoyer" name="submit" id="validateForm"/> <input type="reset" name="reset" value="Effacer" />
+                <div style="color: black">
+                    <input  type="submit" value="Envoyer" name="submit" id="validateForm"/> <input type="reset" name="reset" value="Effacer" />
                 </div>
                 <p></p>
-                <div><a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
+                <div><a style="color: #FF009E"href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
                 <p></p>
             </div>
         </div>

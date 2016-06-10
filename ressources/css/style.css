@@ -1,5 +1,10 @@
 /* El�ments principaux de la page */
 
+.trebuchet {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: white
+}
+
 body
 {
     background: url('../images/fond-site.jpg');
