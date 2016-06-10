@@ -137,7 +137,12 @@ strong.log
     width: 460px;
     border-radius: 25px;
     padding-left: 50px;
+    padding-right: 50px;
     
+}
+
+#message {
+    max-width:100%;
 }
 
 /*.autocomplete-suggestions { border: 1px solid #999; background: grey; overflow: auto; }
