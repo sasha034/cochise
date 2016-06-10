@@ -17,8 +17,10 @@ include_once '../modele/connexionBdd.php';
     </head>
     <body>
         <div class="header">
-            <img src="../ressources/images/banniere.png" alt="bannière du site" />
-        </div> 
+            <a href="menu.php?login=<?php echo $_SESSION['login']?>">
+                <img src="../ressources/images/banniere.png" alt="bannière du site" />
+            </a>
+        </div>
         <div id="block-page-gestion-groupe">
             <div>
                 <h2>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong> sur votre page de gestion de vos membres et groupes.</h2>
@@ -32,6 +34,7 @@ include_once '../modele/connexionBdd.php';
                 }
                 ?>
             </div>
+
 
             <div id="block_csv">
                 <p>Importez ici vos contacts via un fichier CSV</p>

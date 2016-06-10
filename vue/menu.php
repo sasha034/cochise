@@ -2,8 +2,10 @@
 session_start();
 include_once '../modele/connexionBdd.php';
 
-$_SESSION['login'] = filter_input(INPUT_POST, 'pseudo');
-$_SESSION['pseudo'] = filter_input(INPUT_POST, 'pseudo');
+if(isset($_POST['pseudo'])){
+    $_SESSION['login'] = filter_input(INPUT_POST, 'pseudo');
+    $_SESSION['pseudo'] = filter_input(INPUT_POST, 'pseudo');
+}
 
 $pseudo = htmlspecialchars(filter_input(INPUT_POST, 'pseudo'));
 $mdpTemp = $bdd->query('SELECT PASSWORD FROM `USER` WHERE LOGIN = "' . $pseudo . '"');
@@ -21,7 +23,9 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
         </head>
         <body>
             <div class="header">
-                <img src="../ressources/images/banniere.png" alt="banni�re du site" />
+                <a href="menu.php?login=<?php echo $_SESSION['login'] ?>">
+                    <img src="../ressources/images/banniere.png" alt="bannière du site" />
+                </a>
             </div>
             <div id="body_menu">                
                 <p style="font-size:1.3em">Bienvenue <strong class="log"><?php

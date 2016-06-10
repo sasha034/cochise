@@ -1,1 +1,1 @@
-<div id="banniere"><img src="ressources/images/banniere1.png" alt="bannière du site" /></div>
+<div id="banniere"><img src="ressources/images/banniere1.png" alt="banniï¿½re du site" /></div>

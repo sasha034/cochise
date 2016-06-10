@@ -21,7 +21,11 @@ session_start();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="header"><img src="../ressources/images/banniere1.png" alt="bannière cochise"/></div>
+        <div class="header">
+            <a href="menu.php?login=<?php echo $_SESSION['login'] ?>">
+                <img src="../ressources/images/banniere1.png" alt="bannière cochise"/>
+            </a>
+        </div>
         <div id="block-newsletter" class="trebuchet">
             <p>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong></p>
             <h2>Envoyez votre Newsletter</h2>
