@@ -2,7 +2,7 @@
 <?php include_once '../../modele/connexionBdd.php'; ?>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
         <title>Ajouter des membres dans un groupe</title>
         <link rel="stylesheet" href="../../ressources/css/style.css" />
     </head>
@@ -11,7 +11,7 @@
             <h2>Ajoutez des membres dans un groupe</h2>
             <div>
                 <form id="ajoutMembreGroupe" name="ajoutMembreGroupe" action="../controller/groupe.action.modifier.php" method="POST">
-                    <div id="intro1"><p>S�lectionnez les membres que vous souhaitez ajouter � votre groupe</p></div>
+                    <div id="intro1"><p>Sélectionnez les membres que vous souhaitez ajouter à votre groupe</p></div>
                     <h3>Voici votre liste de membres: </h3>
                     <!-- tableau lister Membre -->
                     <input type="hidden" name="idGroupeSelected" value="<?php echo filter_input(INPUT_GET, "idGroupe"); ?>" />

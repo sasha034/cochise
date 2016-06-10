@@ -5,7 +5,7 @@ include_once '../modele/connexionBdd.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Cochise Soft</title>
         <script type="text/javascript" src="../js/jquery/jquery-1.4.3.min.js"></script>
         <script type="text/javascript" src="../js/jquery/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
@@ -23,6 +23,9 @@ include_once '../modele/connexionBdd.php';
             <div>
                 <h2>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong> sur votre page de gestion de vos membres et groupes.</h2>
             </div>
+            
+<!----------------------------------------------------------BLOCK CSV------------------------------------------------------------->
+
             <div id="block_csv">
                 <p>Importez ici vos contacts via un fichier CSV</p>
 
@@ -34,10 +37,12 @@ include_once '../modele/connexionBdd.php';
             </div>    
             <div id="back"><a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
             <div></div>
+            
+<!-----------------------------------------------------------BLOCK MEMBRE----------------------------------------------------------->
             <div id="block_membre">
                 <h3>Voici votre liste de membres: </h3>
                 <!-- tableau lister Membre -->
-                <div class="blockLienAdd"><a href="form/form_ajouterUnMembre.php"><img class="lienAdd" src="../ressources/images/add1.png" alt="add_button"/>Ajouter un membre</a></div>
+                <div class="blockLienAdd"><a href="form/form_ajouterUnMembre.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>"><img class="lienAdd" src="../ressources/images/add1.png" alt="add_button"/>Ajouter un membre</a></div>
                 <table id='tabMembre'>
                     <tr class="enteteTab"><th>IDMEMBRE</th><th>EMAIL</th><th>NOM</th><th>PRENOM</th><th><img src="../ressources/images/delete1.png" alt="delete_button"/></th></tr>
                     <?php
@@ -57,6 +62,9 @@ include_once '../modele/connexionBdd.php';
                 </table>
 
             </div>
+             
+<!---------------------------------------------------------BLOCK GROUPE----------------------------------------------------------------->
+             
             <div id="block_groupe">
                 <h3>Voici votre liste de groupes: </h3>
                 <!-- tableau lister Groupes -->

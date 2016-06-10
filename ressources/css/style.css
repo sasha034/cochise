@@ -99,6 +99,12 @@ strong.log
 {    
     display: inline-block;
     text-align: center;
+   
+}
+
+.cadreImage
+{
+     border: #FF009E 5px ridge;
 }
 
 #gestion
@@ -134,10 +140,10 @@ strong.log
     
 }
 
-.autocomplete-suggestions { border: 1px solid #999; background: grey; overflow: auto; }
+/*.autocomplete-suggestions { border: 1px solid #999; background: grey; overflow: auto; }
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #FF009E; }
-.autocomplete-suggestions strong { font-weight: normal; color: green; }
+.autocomplete-suggestions strong { font-weight: normal; color: green; }*/
 
 /*--------------------------------------------------PAGE GESTION GROUPE--------------------------------------------------*/ 
 

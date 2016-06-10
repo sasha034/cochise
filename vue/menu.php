@@ -15,7 +15,7 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
     <!DOCTYPE html>
     <html>
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
             <title>Menu</title>
             <link rel="stylesheet" href="../ressources/css/style.css" />
         </head>
@@ -38,20 +38,20 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
                                          echo $_SESSION['login'];
                                      }else{
                                          echo filter_input(INPUT_GET,'login');
-                                     }?>"><img src="../ressources/images/mail1.jpg" /></a><h3>NEWSLETTER</h3></div>                
+                                     }?>"><img src="../ressources/images/mail1.jpg" class="cadreImage"/></a><h3>NEWSLETTER</h3></div>                
                 <div id="gestion" class="menu_icone"><a href="gestion_groupe.php?login=<?php 
                                      if (isset($_SESSION['login'])){
                                          echo $_SESSION['login'];
                                      }else{
                                          echo filter_input(INPUT_GET,'login');
-                                     }?>"><img src="../ressources/images/gestion1.jpg" /></a><h3>CONTACTS</h3></div>                                                        
+                                     }?>"><img src="../ressources/images/gestion1.jpg" class="cadreImage" /></a><h3>CONTACTS</h3></div>                                                        
                 <div id="histo" class="menu_icone"><a href="historique.php?login=<?php 
                                      if (isset($_SESSION['login'])){
                                          echo $_SESSION['login'];
                                      }else{
                                          echo filter_input(INPUT_GET,'login');
-                                     }?>"><img src="../ressources/images/histo1.jpg" /></a><h3>HISTORIQUE</h3></div>                
-                <div id="deconnexion"><a href="../index.php">D�connexion</a></div>
+                                     }?>"><img src="../ressources/images/histo1.jpg" class="cadreImage"/></a><h3>HISTORIQUE</h3></div>                
+                <div id="deconnexion"><a href="../index.php">Déconnexion</a></div>
             </div>
         </body>
     </html>

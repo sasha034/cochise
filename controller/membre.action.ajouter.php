@@ -1,6 +1,7 @@
 <?php
 include_once '../modele/connexionBdd.php';
 
+$userLogin = filter_input(INPUT_GET, 'login');
 $email_membre = filter_input(INPUT_POST, 'email_membre');
 $nom_membre = filter_input(INPUT_POST, 'nom_membre');
 $prenom_membre = filter_input(INPUT_POST, 'prenom_membre');
@@ -14,6 +15,6 @@ $req = $bdd->prepare('INSERT INTO MEMBRE(EMAIL, NOM, PRENOM) VALUES(:EMAIL, :NOM
             
     ));
 $req->closeCursor();
-header('Location: ../vue/gestion_groupe.php');
+header('Location: ../vue/gestion_groupe.php?login='.$userLogin);
 
 
