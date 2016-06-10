@@ -27,7 +27,7 @@ session_start();
             </a>
         </div>
         <div id="block-newsletter" class="trebuchet">
-            <p>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong></p>
+            <p class='phraseLog'>Bienvenue <strong class="log"><?php echo filter_input(INPUT_GET, 'login'); ?></strong></p>
             <h2>Envoyez votre Newsletter</h2>
             
             
@@ -47,11 +47,11 @@ session_start();
                     <label for="message">Message: </label><br />  
                     <textarea name="message" rows="10" id="message" cols="48"> </textarea>
                 </p>
-                <div style="color: black">
+                <div class='alignerDiv1' style="color: black">
                     <input  type="submit" value="Envoyer" name="submit" id="validateForm"/> <input type="reset" name="reset" value="Effacer" />
                 </div>
-                <p></p>
-                <div><a style="color: #FF009E"href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
+                
+                <div class='alignerDiv2'><a style="color: #FF009E" href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
                 <p></p>
             </div>
         </div>

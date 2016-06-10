@@ -35,7 +35,7 @@ a:hover
 
 a:link 
 { 
- text-decoration:none; 
+    text-decoration:none; 
 } 
 
 .header
@@ -79,7 +79,7 @@ strong.log
 /*--------------------------------------------PAGE ERROR--------------------------------------------------------------*/
 #block-error
 {
-     text-align: center;
+    text-align: center;
     width: 402px;   
     margin: auto;
     border-radius: 25px;
@@ -146,14 +146,29 @@ strong.log
     
 }
 
-#message {
+#message 
+{
     max-width:100%;
 }
 
-/*.autocomplete-suggestions { border: 1px solid #999; background: grey; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #FF009E; }
-.autocomplete-suggestions strong { font-weight: normal; color: green; }*/
+.phraseLog
+{
+    font-size: 1.3em;
+}
+
+.alignerDiv1
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 18px;
+}
+
+.alignerDiv2
+{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.2em;
+}
 
 /*--------------------------------------------------PAGE GESTION GROUPE--------------------------------------------------*/ 
 
