@@ -28,7 +28,7 @@ include_once '../modele/connexionBdd.php';
 
             <div id="ajout-csv">
                 <?php if(isset($_GET['action']) && $_GET['action'] == "ajout"){
-                    echo "Les utilisateurs de votre fichier CSV ont bien été ajoutés";
+                    echo "Les membres de votre fichier CSV ont bien été ajoutés";
                 }
                 ?>
             </div>

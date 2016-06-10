@@ -11,7 +11,7 @@ include_once '../modele/connexionBdd.php';
     </head>
     <body>
         <div class="header">
-            <img src="../ressources/images/banniere.png" alt="banni�re du site" />
+            <img src="../ressources/images/banniere.png" alt="bannière du site" />
         </div> 
         <div id="block-page-gestion-groupe">
             <div>
