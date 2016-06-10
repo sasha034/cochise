@@ -76,23 +76,25 @@ session_start();
                     });
                 });
 
+                setTimeout(function(){
+                    $.ajax({
+                        url: 'getMails.php?action=getMails',
+                        type: 'GET',
+                        success: function(data){
+                            var response = JSON.parse(data);
+                            var selectpicker = $(".selectpicker");
 
-                $.ajax({
-                    url: 'getMails.php?action=getMails',
-                    type: 'GET',
-                    success: function(data){
-                        var response = JSON.parse(data);
-                        var selectpicker = $(".selectpicker");
+                            for(var i = 0; i < response.length; i++){
+                                selectpicker.append(
+                                    "<option value='"+response[i]+"'>"+response[i]+"</option>"
+                                ).selectpicker('refresh');
+                            }
 
-                        for(var i = 0; i < response.length; i++){
-                            selectpicker.append(
-                                "<option value='"+response[i]+"'>"+response[i]+"</option>"
-                            ).selectpicker('refresh');
                         }
+                    });
+                },500);
 
-                    }
-                });
-                
+
                 $.ajax({
                     url: 'getMails.php?action=getGroups',
                     type: 'GET',
