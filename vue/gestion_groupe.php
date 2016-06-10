@@ -26,17 +26,26 @@ include_once '../modele/connexionBdd.php';
             
 <!----------------------------------------------------------BLOCK CSV------------------------------------------------------------->
 
+            <div id="ajout-csv">
+                <?php if(isset($_GET['action']) && $_GET['action'] == "ajout"){
+                    echo "Les utilisateurs de votre fichier CSV ont bien été ajoutés";
+                }
+                ?>
+            </div>
+
             <div id="block_csv">
                 <p>Importez ici vos contacts via un fichier CSV</p>
 
-                <form method="post" action="groupe_traitement.php" enctype="multipart/form-data">
+                <form method="post" action="groupe_traitement.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>" enctype="multipart/form-data">
                     <input type="file" name="csv" id="csv"/><br /> 
                     <p></p>
                     <input type="submit" value="Envoyer" name="submit" /> <input type="reset" name="reset" value="Effacer" />
                 </form>
             </div>    
-            <div id="back"><a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
-            <div></div>
+            <div id="back">
+                <a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a>
+            </div>
+
             
 <!-----------------------------------------------------------BLOCK MEMBRE----------------------------------------------------------->
             <div id="block_membre">
@@ -44,9 +53,15 @@ include_once '../modele/connexionBdd.php';
                 <!-- tableau lister Membre -->
                 <div class="blockLienAdd"><a href="form/form_ajouterUnMembre.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>"><img class="lienAdd" src="../ressources/images/add1.png" alt="add_button"/>Ajouter un membre</a></div>
                 <table id='tabMembre'>
-                    <tr class="enteteTab"><th>IDMEMBRE</th><th>EMAIL</th><th>NOM</th><th>PRENOM</th><th><img src="../ressources/images/delete1.png" alt="delete_button"/></th></tr>
+                    <tr class="enteteTab">
+                        <th>Id</th>
+                        <th>Mail</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th></th>
+                    </tr>
                     <?php
-                    $reponse = $bdd->query('SELECT * from MEMBRE');
+                    $reponse = $bdd->query('SELECT * from MEMBRE order by EMAIL');
                     while ($donneesMembres = $reponse->fetch()) {
                         ?>
                         <tr>
@@ -54,7 +69,8 @@ include_once '../modele/connexionBdd.php';
                             <td><?php echo $donneesMembres['EMAIL']; ?></td>
                             <td><?php echo $donneesMembres['NOM']; ?></td>
                             <td><?php echo $donneesMembres['PRENOM']; ?></td>
-                            <td><a href="../controller/membre.action.supprimer.php?idMembre=<?php echo $donneesMembres['IDMEMBRE']; ?>"><img src="../ressources/images/delete1.png" alt="delete_button"/></a></td>
+                            <td>
+                                <a href="../controller/membre.action.supprimer.php?idMembre=<?php echo $donneesMembres['IDMEMBRE']; ?>&login=<?php echo filter_input(INPUT_GET, 'login'); ?>"><img src="../ressources/images/delete1.png" alt="delete_button"/></a></td>
                         </tr>
                         <?php
                     }
@@ -70,9 +86,15 @@ include_once '../modele/connexionBdd.php';
                 <!-- tableau lister Groupes -->
                 <div class="blockLienAdd"><a href="form/form_ajouterUnGroupe.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>"><img class="lienAdd" src="../ressources/images/add1.png" alt="add_button"/>Ajouter un groupe</a></div>
                 <table id='tabGroupe'>
-                    <tr><th>IDGROUPE</th><th>NOMGROUPE</th><th>CONSULTER</th><th>MODIFIER</th><th><img src="../ressources/images/delete1.png" alt="delete_button"/></th></tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Consulter</th>
+                        <th>Modifier</th>
+                        <th></th>
+                    </tr>
                     <?php
-                    $response = $bdd->query('SELECT G.IDGROUPE, G.NOMGROUPE FROM GROUPE G');
+                    $response = $bdd->query('SELECT G.IDGROUPE, G.NOMGROUPE FROM GROUPE G ORDER BY G.NOMGROUPE');
                     while ($donneesGroupes = $response->fetch()) {
                         ?>
                         <tr>

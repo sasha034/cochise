@@ -4,6 +4,8 @@ include_once '../modele/connexionBdd.php';
 
 $idMembre = filter_input(INPUT_GET, 'idMembre');
 
+$login = filter_input(INPUT_GET, 'login');
+
 
 
 if (filter_input(INPUT_GET, 'idGroupe')!= null) {
@@ -28,7 +30,10 @@ if (filter_input(INPUT_GET, 'idGroupe')!= null) {
     ));
     $req2->closeCursor();   
 }
- header('Location: ../vue/gestion_groupe.php');
+
+
+
+ header('Location: ../vue/gestion_groupe.php?login='.$login);
  exit;
 
 

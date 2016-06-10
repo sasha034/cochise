@@ -24,7 +24,7 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
                 <img src="../ressources/images/banniere.png" alt="banni�re du site" />
             </div>
             <div id="body_menu">                
-                <p>Bienvenue <strong class="log"><?php 
+                <p style="font-size:1.3em">Bienvenue <strong class="log"><?php
                                      if (isset($_SESSION['login'])){
                                          echo $_SESSION['login'];
                                      }else{

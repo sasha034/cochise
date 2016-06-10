@@ -16,7 +16,7 @@ $login = filter_input(INPUT_GET, 'login');
             <div>
 
 
-                <form id="form_AjouterUnMembre" name="form_AjouterUnMembre" action="../../controller/membre.action.ajouter.php" method="POST">
+                <form id="form_AjouterUnMembre" name="form_AjouterUnMembre" action="../../controller/membre.action.ajouter.php?login=<?php echo $login; ?>" method="POST">
                     <div id = "intro">
                         <p>Ajouter un membre en le créant ci-dessous</p>
                     </div>
