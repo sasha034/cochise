@@ -26,10 +26,11 @@ foreach($targets as $target){
     }
 }
 
-
+$from = 'anthony.ezar@yahoo.fr';
 $destinataire = filter_input(INPUT_POST, 'email');
 $objet = filter_input(INPUT_POST, 'objet');
 $pj = filter_input(INPUT_POST, 'pj');
+(empty($pj)) ? $hasPj = 0 : $hasPj = 1;
 $message = filter_input(INPUT_POST, 'message');
 
 
@@ -45,7 +46,7 @@ $mail->Password = 'machala88';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('anthony.ezar@yahoo.fr', 'Client');
+$mail->setFrom($from, 'Client');
 
 // Ajouter un foreach mails -> addAddress
 foreach($mails as $email){
@@ -66,9 +67,17 @@ $mail->Subject = $objet;
 $mail->Body    = $message;
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+$sent = 0;
+
 if(!$mail->send()) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
+    $sent = 1;
 }
+
+$destinataires = implode(', ',$mails);
+
+$reqHisto = "INSERT INTO HISTORIQUE ( msgFrom, msgTo, object, pj, message, sent) VALUES ('$from', '$destinataires', '$objet', $hasPj, '$message', $sent)";
+$resultReqHisto = $bdd->query($reqHisto) or die(print_r($bdd->errorInfo()));
