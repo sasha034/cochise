@@ -293,3 +293,7 @@ th
     max-width: 600px;
     
 }
+
+.btn-primary {
+    background: red !important;
+}
