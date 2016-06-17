@@ -79,5 +79,5 @@ if(!$mail->send()) {
 
 $destinataires = implode(', ',$mails);
 
-$reqHisto = "INSERT INTO HISTORIQUE ( msgFrom, msgTo, object, pj, message, sent) VALUES ('$from', '$destinataires', '$objet', $hasPj, '$message', $sent)";
+$reqHisto = "INSERT INTO HISTORIQUE (creationDate, msgFrom, msgTo, object, pj, message, sent) VALUES (NOW(), '$from', '$destinataires', '$objet', $hasPj, '$message', $sent)";
 $resultReqHisto = $bdd->query($reqHisto) or die(print_r($bdd->errorInfo()));
