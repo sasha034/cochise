@@ -18,7 +18,7 @@ include_once '../modele/connexionBdd.php';
     <body>
         <div class="header">
             <a href="menu.php?login=<?php echo $_SESSION['login']?>">
-                <img src="../ressources/images/banniere.png" alt="bannière du site" />
+                <img src="../ressources/images/banniere.png" alt="bannière du site" class="arrondi_image"/>
             </a>
         </div>
         <div id="block-page-gestion-groupe">
@@ -37,7 +37,7 @@ include_once '../modele/connexionBdd.php';
 
 
             <div id="block_csv">
-                <p>Importez ici vos contacts via un fichier CSV</p>
+                <p class="h2style">Importez ici vos contacts via un fichier CSV</p>
 
                 <form method="post" action="groupe_traitement.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>" enctype="multipart/form-data">
                     <input type="file" name="csv" id="csv"/><br /> 

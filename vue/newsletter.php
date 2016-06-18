@@ -23,7 +23,7 @@ session_start();
     <body>
         <div class="header">
             <a href="menu.php?login=<?php echo $_SESSION['login'] ?>">
-                <img src="../ressources/images/banniere1.png" alt="bannière cochise"/>
+                <img src="../ressources/images/banniere1.png" alt="bannière cochise" class="arrondi_image"/>
             </a>
         </div>
         <div id="block-newsletter" class="trebuchet">

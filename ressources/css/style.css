@@ -55,6 +55,11 @@ strong.log
     color: #FF009E;
 }
 
+.arrondi_image
+{
+    border-radius: 20px;
+}
+
 /*----------------------------------------------HEADER-------------------------------------------------------------*/
 
 
@@ -71,9 +76,13 @@ strong.log
 #form_login
 {
     text-align: center;
-    width: 402px;   
+    width: 460px;
     margin: auto;
-    
+    border: #FF009E solid 4px;
+    border-radius: 25px;
+    text-align: center;
+    background: url('../images/fond_rdv.jpg'); 
+    padding-bottom: 10px;
 }
 
 /*--------------------------------------------PAGE ERROR--------------------------------------------------------------*/
@@ -92,8 +101,13 @@ strong.log
 #block-ajouter-user
 {
     text-align: center;
-    width: 402px;   
+    width: 460px;
     margin: auto;
+    border: #FF009E solid 4px;
+    border-radius: 25px;
+    text-align: center;
+    background: url('../images/fond_rdv.jpg'); 
+    padding-bottom: 10px;
 }
 
 
@@ -107,9 +121,16 @@ strong.log
    
 }
 
+.menu_icone:hover
+{    
+   opacity: 0.5;
+   
+}
+
 .cadreImage
 {
      border: #FF009E 5px ridge;
+     border-radius: 20px;
 }
 
 #gestion
@@ -125,24 +146,74 @@ strong.log
     text-align: center;
     border: solid #FF009E 4px;
     border-radius: 25px;
-    padding-bottom: 50px;    
+    padding-bottom: 50px;
+    background: url('../images/fond_rdv.jpg');
 }
 
 #deconnexion
 {
     margin-top: 20px;
 }
+
+ul
+{
+    padding-top: 65px;
+    list-style-type:none;     
+    margin: auto;
+    text-align: center;
+}
+
+li
+{
+    display: inline-block;    
+}
+
+li a
+{
+    text-decoration:none; 
+    
+}
+
+.poz1
+{
+   position: relative;
+   right: 128px;
+   bottom: 39px;
+   font-size: 1.3em;
+   font-weight: bold;
+   display: inline-block;
+   
+}
+
+.poz2
+{
+   position: relative;
+   left: 28px;
+   bottom: 39px;
+   font-size: 1.3em;
+   font-weight: bold; 
+   display: inline-block;
+}
+
+.poz3
+{
+   position: relative;
+   left: -53px;
+   bottom: 23px;
+   display: inline-block;
+}
 /*--------------------------------------------------PAGE NEWSLETTER------------------------------------------------------*/
 
 #block-newsletter
-{
-    width: 900px;
+{    
     margin: auto;
     border: #FF009E solid 4px;
     width: 460px;
     border-radius: 25px;
     padding-left: 50px;
     padding-right: 50px;
+    background: url('../images/fond_rdv.jpg');
+    margin-top: 3px;
     
 }
 
@@ -170,13 +241,22 @@ strong.log
     font-size: 1.2em;
 }
 
+.btn-info 
+{
+    background: #949494 !important;
+    border-color: #FF009E !important;
+}
+
 /*--------------------------------------------------PAGE GESTION GROUPE--------------------------------------------------*/ 
 
 #block-page-gestion-groupe
 {
     width: 900px;
     margin: auto;
-     
+    border: #FF009E solid 4px;
+    border-radius: 25px;
+    text-align: center;
+    background: url('../images/fond_rdv.jpg'); 
 }
 
 table
@@ -210,7 +290,7 @@ th
 #block_csv
 {
     border: #FF009E solid 4px;
-    width: 373px;
+    width: 334px;
     border-radius: 25px;
     padding-left: 10px; 
     margin-bottom: 10px;
@@ -218,13 +298,14 @@ th
     vertical-align: top;
     padding-bottom: 20px;
     text-align: center;
+    background: url('../images/3.jpg'); 
 }
 
 #back
 {
     display: inline-block;
     vertical-align: top;
-    margin-left: 50px;
+    margin-left: 97px;
     font-size: 1.3em;
 }
 
@@ -259,8 +340,13 @@ th
 #block-page-ajouter-membre
 {
     text-align: center;
+    width: 460px;
     margin: auto;
-    width: 402px;
+    border: #FF009E solid 4px;
+    border-radius: 25px;
+    text-align: center;
+    background: url('../images/fond_rdv.jpg'); 
+    padding-bottom: 10px;
 }
 
 /*--------------------------------------------------PAGE LISTER UN GROUPE------------------------------------------------*/
@@ -280,10 +366,19 @@ th
 #block-page-form-ajouter-groupe
 {
     text-align: center;
-    width: 402px;
+    width: 460px;
     margin: auto;
+    border: #FF009E solid 4px;
+    border-radius: 25px;
+    text-align: center;
+    background: url('../images/fond_rdv.jpg'); 
+    padding-bottom: 10px;
 }
 
+.h2style
+{
+    color: #FF009E;
+}
 /*--------------------------------------------------PAGE FORM MODIFIER UN GROUPE-------------------------------------------*/
 
 #lightbox2
@@ -294,7 +389,3 @@ th
     
 }
 
-.btn-info {
-      background: red !important;
-    border-color: white !important;
-  }

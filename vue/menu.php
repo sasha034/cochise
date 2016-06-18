@@ -24,7 +24,7 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
         <body>
             <div class="header">
                 <a href="menu.php?login=<?php echo $_SESSION['login'] ?>">
-                    <img src="../ressources/images/banniere.png" alt="bannière du site" />
+                    <img src="../ressources/images/banniere.png" alt="bannière du site" class="arrondi_image" />
                 </a>
             </div>
             <div id="body_menu">                
@@ -37,19 +37,19 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
                                         ?>
                             </strong> !</p>
                 <h1>MENU</h1>
-                <div id="newsletter" class="menu_icone"><a href="newsletter.php?login=<?php 
+                <div id="newsletter" class="menu_icone" title="Envoyez une Newsletter"><a href="newsletter.php?login=<?php 
                                      if (isset($_SESSION['login'])){
                                          echo $_SESSION['login'];
                                      }else{
                                          echo filter_input(INPUT_GET,'login');
                                      }?>"><img src="../ressources/images/mail1.jpg" class="cadreImage"/></a><h3>NEWSLETTER</h3></div>                
-                <div id="gestion" class="menu_icone"><a href="gestion_groupe.php?login=<?php 
+                <div id="gestion" class="menu_icone" title="Gérez vos contacts"><a href="gestion_groupe.php?login=<?php 
                                      if (isset($_SESSION['login'])){
                                          echo $_SESSION['login'];
                                      }else{
                                          echo filter_input(INPUT_GET,'login');
                                      }?>"><img src="../ressources/images/gestion1.jpg" class="cadreImage" /></a><h3>CONTACTS</h3></div>                                                        
-                <div id="histo" class="menu_icone"><a href="historique.php?login=<?php 
+                <div id="histo" class="menu_icone" title="Consultez votre historique"><a href="historique.php?login=<?php 
                                      if (isset($_SESSION['login'])){
                                          echo $_SESSION['login'];
                                      }else{
@@ -60,6 +60,7 @@ if ($mdpBase['PASSWORD'] === $mdp || filter_input(INPUT_GET, 'login') != null) {
         </body>
     </html>
     <?php
+    include_once "include/footer.php";
 } else {
     header('Location: error.php');    
 }

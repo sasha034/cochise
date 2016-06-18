@@ -14,7 +14,9 @@ include_once '../modele/connexionBdd.php';
     </head>
     <body>
         <div class="header">
-            <img src="../ressources/images/banniere.png" alt="bannière du site" />
+            <a href="menu.php?login=<?php echo $_SESSION['login']?>">
+                <img src="../ressources/images/banniere.png" alt="bannière du site" class="arrondi_image"/>
+            </a>
         </div> 
         <div id="block-page-gestion-groupe">
             <div>

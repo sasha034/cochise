@@ -49,13 +49,13 @@ if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", filter_input(INPU
     echo '<!DOCTYPE html>
                         <html>
                             <head>
-                                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+                                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
                                 <title>Menu</title>
                                 <link rel="stylesheet" href="../ressources/css/style.css" /> 
                             </head>
                             <body>
                                 <div>
-                                <p>Impossible de cr�er votre compte, l\'adresse email est invalide.</p>
+                                <p>Impossible de créer votre compte, l\'adresse email est invalide.</p>
                                 <p><a href="../vue/form/form_ajouterUnUser.php">Retournez au formulaire</a></p>
                                 </div>
                             </body>

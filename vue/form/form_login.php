@@ -7,12 +7,17 @@
 <!--        <script src="js/jquery/jquery-1.4.3.min.js"></script>-->
     </head>
     <body>
-        <div id="form_login"> 
-            
-            
+        <div class="header">
+            <a>
+                <img src="ressources/images/banniere1.png" alt="bannière du site" class="arrondi_image"/>
+            </a>
+        </div>
+        <div id="form_login">            
             <form id="formulaireConnexion" name="formulaireConnexion" action="vue/menu.php" method="POST" onsubmit=" return validateConnexion();">
-                <div id="intro"><p>Veuillez vous identifier pour accéder à l'application Cochise Soft</p></div>
-                <fieldset class="authen">
+                <div id="intro">
+                    <h4 class="h2style">Veuillez vous identifier pour accéder à l'application Cochise Soft</h4>
+                </div>
+                
                     <label for="pseudo">Pseudonyme *  :</label>
                     <input type="text" name="pseudo" id="pseudo" />
                     <br />
@@ -28,7 +33,7 @@
                     <p>
                         (*) champs obligatoires
                     </p>
-                </fieldset>
+               
             </form>        
         </div>
 

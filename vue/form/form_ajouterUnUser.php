@@ -1,5 +1,8 @@
+<?php
+session_start();
+include_once '../../modele/connexionBdd.php';
+?>
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
@@ -7,19 +10,23 @@
         <link rel="stylesheet" href="../../ressources/css/style.css" />
     </head>
     <body>
+       <div class="header">
+            <a href="../menu.php?login=<?php echo $_SESSION['login'] ?>">
+                <img src="../../ressources/images/banniere1.png" alt="bannière du site" class="arrondi_image"/>
+            </a>
+        </div>
         <div id="block-ajouter-user">
-            <img class="header" src="../../ressources/images/banniere1.png" alt="banni�re du site" />
             <form id="form_ajouterUnUser" name="form_ajouterUnUser" action="../../controller/user.action.ajouter.php" method="POST" onsubmit=" return checkRegex();">
-                <div id="intro"><p>Bienvenue sur votre formulaire d'inscription</p></div>
-                <fieldset>
+                <div id="intro">
+                    <p class="h2style">Bienvenue sur votre formulaire d'inscription</p>
+                </div>               
                     <label id="login" for="login">Login * :</label><input type="text" name="login" id="login" /><br />
                     <label id="password" for="password">Mot de passe * :</label><input type="password" name="password" id="password" /><br />
                     <label id="nom_user" for="nom_user">Nom * :</label><input type="text" name="nom_user" id="nom_user" /><br />
                     <label id="email_user" for="email_user">Email *:</label><input type="text" name="email_user" id="email_user" /><br />
                     <p><input class='bouton_validation' type="submit" value="Valider inscription" name="bouton_validation"/></p>
                     <p>(*) champs obligatoires</p>
-                    <div><a href="../../index.php">Retour</a></div>
-                </fieldset>
+                    <div><a href="../../index.php">Retour</a></div>               
             </form>
         </div>
     </body>
