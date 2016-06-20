@@ -45,7 +45,6 @@ $donneesGroupes = $reponse1->fetch();
                     ?>   
                 </tbody>
             </table>
-            <p id="p">.</p>
         </div>
         <script>
             $(document).ready(function () {

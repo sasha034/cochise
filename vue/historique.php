@@ -25,7 +25,7 @@ include_once '../modele/connexionBdd.php';
             
             <div id=""><a href="menu.php?login=<?php echo filter_input(INPUT_GET, 'login'); ?>">Retour à la page d'accueil</a></div>
 
-            <div id="block_csv" style="display:none; width: 100%; text-align:left">
+            <div id="mail_display" style="display:none; width: 100%; text-align:left">
                 <p id="creationDate" class="DateEnvoi"></p>
                 <p id="msgFrom" class="De"></p>
                 <p id="msgTo" class="Vers"></p>
@@ -35,7 +35,7 @@ include_once '../modele/connexionBdd.php';
                 <p id="sent" class="Envoyé"></p>
             </div>
 
-            <table>
+            <table class="table_histo" >
                 <thead>
                     <tr>
                         <th>Date de création</th>
@@ -74,7 +74,7 @@ include_once '../modele/connexionBdd.php';
 
         <script>
             function afficher(id){
-                $("#block_csv").show();
+                $("#mail_display").show();
                 $.ajax({
                     url: 'getMails.php?action=getHistoryById&id='+id,
                     type: 'GET',
