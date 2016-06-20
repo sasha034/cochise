@@ -19,6 +19,18 @@ body
     
 }
 
+.lol, .lol tr, .lol tr td {
+    background-color: transparent !important;
+}
+
+.lol tr td {
+    color: white;
+}
+
+.lol {
+    margin-bottom:20px;
+}
+
 table
 {
     color: #444;
