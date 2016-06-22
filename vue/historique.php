@@ -39,13 +39,13 @@ include_once '../modele/connexionBdd.php';
                 <thead>
                     <tr>
                         <th>Date de création</th>
-                        <th>De</th>
-                        <th>Vers</th>
+                        <th>Expéditeur</th>
+                        <th>Destinaire(s)</th>
                         <th>Objet</th>
                         <th>PJ</th>
                         <th>Message</th>
-                        <th>Envoyé</th>
-                        <th>Afficher</th>
+                        <th>Statut</th>
+                        <th>Détails</th>
                     </tr>
                 </thead>
                 <tbody>

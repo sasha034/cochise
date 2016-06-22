@@ -41,11 +41,11 @@ session_start();
 
                     <br />
                     <label for="objet" >Objet : </label><br />
-                    <input type="text" id="objet"  name="objet" size="25" /><br />
+                    <input type="text" id="objet"  name="objet" size="25" style="color:black"/><br />
                     <label for="pj" >Pièce(s) jointe(s) : </label><br />
                     <input type="file" id="pj"  name="pj" size="25" /><br />
                     <label for="message">Message: </label><br />  
-                    <textarea name="message" rows="10" id="message" cols="48"> </textarea>
+                    <textarea name="message" rows="10" id="message" cols="48"style="color:black"> </textarea>
                 </p>
                 <div class='alignerDiv1' style="color: black">
                     <input  type="submit" value="Envoyer" name="submit" id="validateForm"/> <input type="reset" name="reset" value="Effacer" />
